@@ -17,3 +17,12 @@
 .react-flow__controls-button svg path{
   fill: #4A4A4A !important;
 }
+
+a{
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+  color: unset;
+}
