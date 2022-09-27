@@ -15,11 +15,25 @@ const nodeTypes = { course: CourseNode };
 
 const onInit = (reactFlowInstance) => console.log('flow loaded:', reactFlowInstance);
 
+var lefts = [];
+var rights = [];
 var full_edges = [];
-initialEdges.forEach(e => full_edges.push([e.source, e.target]))
+initialEdges.forEach(e => {
+  full_edges.push([e.source, e.target])
+  lefts.push(e.target);
+  rights.push(e.source);
+})
 
 var ids = [];
-initialNodes.forEach(n => ids.push(n.id));
+initialNodes.forEach(n => {
+  ids.push(n.id)
+  if (lefts.includes(n.id)){
+    n.data.hasLeft = true;
+  }
+  if (rights.includes(n.id)) {
+    n.data.hasRight = true;
+  }
+});
 
 var corrAmm = {};
 var corrAmmLis = [];

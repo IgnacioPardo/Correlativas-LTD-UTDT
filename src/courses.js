@@ -6,6 +6,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#000',
         background: '#D9B600',
         label: (
@@ -19,6 +21,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#fff',
         background: '#0D037B',
         label: (
@@ -32,6 +36,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#fff',
         background: '#B64A0D',
         label: (
@@ -45,6 +51,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#fff',
         background: '#232323',
         label: (
@@ -58,6 +66,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#000',
         background: '#D9B600',
         label: (
@@ -71,6 +81,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#fff',
         background: '#0D037B',
         label: (
@@ -84,6 +96,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#fff',
         background: '#0D037B',
         label: (
@@ -97,6 +111,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#fff',
         background: '#037B1E',
         label: (
@@ -110,6 +126,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#fff',
         background: '#232323',
         label: (
@@ -123,6 +141,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#000',
         background: '#D9B600',
         label: (
@@ -136,6 +156,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#fff',
         background: '#7B035A',
         label: (
@@ -149,6 +171,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#fff',
         background: '#0D037B',
         label: (
@@ -162,6 +186,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#fff',
         background: '#B64A0D',
         label: (
@@ -175,6 +201,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#000',
         background: '#D9B600',
         label: (
@@ -188,6 +216,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#fff',
         background: '#0D037B',
         label: (
@@ -201,6 +231,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#fff',
         background: '#037B1E',
         label: (
@@ -214,6 +246,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#fff',
         background: '#B64A0D',
         label: (
@@ -227,6 +261,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#000',
         background: '#D9B600',
         label: (
@@ -240,6 +276,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#fff',
         background: '#0D037B',
         label: (
@@ -253,6 +291,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#fff',
         background: '#B64A0D',
         label: (
@@ -266,6 +306,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#fff',
         background: '#7B035A',
         label: (
@@ -279,6 +321,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#000',
         background: '#D9B600',
         label: (
@@ -292,6 +336,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#fff',
         background: '#037B1E',
         label: (
@@ -305,6 +351,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#fff',
         background: '#B64A0D',
         label: (
@@ -318,6 +366,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#fff',
         background: '#7B035A',
         label: (
@@ -331,6 +381,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#fff',
         background: '#232323',
         label: (
@@ -344,6 +396,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#000',
         background: '#D9B600',
         label: (
@@ -357,6 +411,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#fff',
         background: '#B64A0D',
         label: (
@@ -370,6 +426,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#fff',
         background: '#504F51',
         label: (
@@ -383,6 +441,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#fff',
         background: '#504F51',
         label: (
@@ -396,6 +456,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#000',
         background: '#D9B600',
         label: (
@@ -409,6 +471,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#fff',
         background: '#037B1E',
         label: (
@@ -422,6 +486,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#fff',
         background: '#504F51',
         label: (
@@ -435,6 +501,8 @@ export const nodes = [{
     type: 'course',
     targetPosition: 'right',
     data: {
+        hasRight : false,
+        hasLeft : false,
         foreground: '#fff',
         background: '#504F51',
         label: (

@@ -10,11 +10,11 @@ function CourseNode({ data }) {
 
     return (
         <>
-            <Handle type="target" position={Position.Left} />
+            {data.hasLeft ? <Handle type="target" position={Position.Left} /> : null}
             <div style={{ width: '160px', minHeight: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 10, color: data.foreground, background: data.background, borderRadius: 14, border: "1px solid #000", fontFamily: '"Inter", sans-serif', fontSize: "14px" }}>
                 {data.label}
             </div>
-            <Handle type="source" position={Position.Right} />
+            {data.hasRight ? <Handle type="source" position={Position.Right} /> : null}
         </>
     );
 }
