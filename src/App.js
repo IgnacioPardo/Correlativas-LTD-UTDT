@@ -18,6 +18,22 @@ const onInit = (reactFlowInstance) => console.log('flow loaded:', reactFlowInsta
 var full_edges = [];
 initialEdges.forEach(e => full_edges.push([e.source, e.target]))
 
+var ids = [];
+initialNodes.forEach(n => ids.push(n.id));
+
+var corrAmm = {};
+var corrAmmLis = [];
+ids.forEach(
+  (id) => {
+    var thisPath = path(id);
+    corrAmm[id] = thisPath.length - 1;
+    corrAmmLis.push([id, thisPath.length - 1])
+  }
+)
+corrAmmLis = corrAmmLis.sort(function (a, b) {
+  return b[1] - a[1];
+})
+
 function onlyUnique(value, index, self) {
   return self.indexOf(value) === index;
 }
@@ -62,17 +78,36 @@ function filterNodes(id) {
   return nodes;
 }
 
-function updateNodes(nodeSetter, edgeSetter, id, pathview) {
-  if (!pathview) {
-    nodeSetter(initialNodes);
-  }
-  else {
+function updateNodes(nodeSetter, edgeSetter, id, pathview, setPathview) {
+  if (pathview) {
     nodeSetter(filterNodes(id));
   }
+  else {
+    nodeSetter(initialNodes);
+  }
   edgeSetter(initialEdges);
+  setPathview(!pathview);
+}
+
+function course_by_id(id) {
+  var course = null;
+  initialNodes.forEach(function (node) {
+    if (node.id === id) {
+      course = node;
+    }
+  });
+  return course;
 }
 
 function App() {
+
+  //console.log(corrAmm);
+  //console.log(course_by_id('1'))
+  corrAmmLis.forEach(
+    (id) => {
+      console.log(course_by_id(id[0]).data.label.props.children + ": " + id[1])
+    }
+  )
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
   const onConnect = useCallback((params) => setEdges((eds) => addEdge(params, eds)), []);
@@ -125,8 +160,7 @@ function App() {
         attributionPosition="top-right"
         nodeTypes={nodeTypes}
         onNodeClick={(event, element) => { 
-          updateNodes(setNodes, setEdges, element.id, pathview); 
-          setPathview(!pathview) 
+          updateNodes(setNodes, setEdges, element.id, pathview, setPathview);
           if (!pathview){
             setLabel("Clickea en una materia para ver todas sus correlativas")
           }
@@ -134,13 +168,42 @@ function App() {
             setLabel("Clickea en cualquier materia para resetear vista")
           }
         }}
+        onNodeMouseEnter={(event, element) => {
+          if (pathview) {
+            if (corrAmm[element.id] > 1) {
+              setLabel("Clickea en " + course_by_id(element.id).data.label.props.children + " para ver sus " + corrAmm[element.id] + " correlativas")
+            }
+            else if (corrAmm[element.id] === 1) {
+              setLabel("Clickea en " + course_by_id(element.id).data.label.props.children + " para ver su correlativa")
+            }
+            else{
+              setLabel(course_by_id(element.id).data.label.props.children + " no tiene correlativas")
+            }
+          } 
+          else {
+            if (corrAmm[element.id] > 1) {
+              setLabel(course_by_id(element.id).data.label.props.children + " tiene " + corrAmm[element.id] + " correlativas")
+            }
+            else if (corrAmm[element.id] === 1) {
+              setLabel(course_by_id(element.id).data.label.props.children + " tiene 1 correlativa")
+            }
+          }
+        }}
+        onNodeMouseLeave={(event, element) => {
+          if (pathview) {
+            setLabel("Clickea en una materia para ver todas sus correlativas")
+          }
+          else {
+            setLabel("Clickea en cualquier materia para resetear vista")
+          }
+        }}
       >
         <Controls
-          style={{ color: '#4A4A4A', backgroundColor: '#181818', borderRadius: '2px', padding: '5px'}}
-          onFitView={() => updateNodes(setNodes, setEdges, null, false)}
+          style={{ color: '#4A4A4A', backgroundColor: '#181818', borderRadius: '2px', padding: '5px', zIndex:100}}
+          //onFitView={() => updateNodes(setNodes, setEdges, null, false, setPathview)}
           showInteractive={false}
         >
-          <ControlButton onClick={() => updateNodes(setNodes, setEdges, null, false)}>
+          <ControlButton onClick={() => updateNodes(setNodes, setEdges, null, false, setPathview)}>
             <>⌘</>
           </ControlButton>
         </Controls>
