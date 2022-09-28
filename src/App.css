@@ -7,18 +7,21 @@
   background-color: #1E1E1E;
 }
 
-.react-flow__controls, .react-flow__controls-button{
+.react-flow__controls,
+.react-flow__controls-button {
   background-color: #181818 !important;
   color: #4A4A4A !important;
 }
-.react-flow__controls-button{
+
+.react-flow__controls-button {
   border: 1px solid #4A4A4A !important;
 }
-.react-flow__controls-button svg path{
+
+.react-flow__controls-button svg path {
   fill: #4A4A4A !important;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
