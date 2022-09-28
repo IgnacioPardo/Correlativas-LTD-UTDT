@@ -13,7 +13,7 @@ import { nodes as initialNodes, edges as initialEdges } from './courses';
 
 const nodeTypes = { course: CourseNode };
 
-const onInit = (reactFlowInstance) => console.log('flow loaded:', reactFlowInstance);
+//const onInit = (reactFlowInstance) => console.log('flow loaded:', reactFlowInstance);
 
 var lefts = [];
 var rights = [];
@@ -115,13 +115,6 @@ function course_by_id(id) {
 
 function App() {
 
-  //console.log(corrAmm);
-  //console.log(course_by_id('1'))
-  corrAmmLis.forEach(
-    (id) => {
-      console.log(course_by_id(id[0]).data.label.props.children + ": " + id[1])
-    }
-  )
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
   const onConnect = useCallback((params) => setEdges((eds) => addEdge(params, eds)), []);
