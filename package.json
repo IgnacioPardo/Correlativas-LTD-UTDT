@@ -15,9 +15,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && cp -R build/* docs",
+    "build": "react-scripts build && cp -R build/* docs && sed -i -e 's+\"/+\"+g' docs/index.html",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "commit-deploy": "git add docs && git commit -m 'deploy' && git push",
+    "deploy": "npm run build && npm run commit-deploy"
   },
   "eslintConfig": {
     "extends": [
