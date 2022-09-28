@@ -13,7 +13,7 @@ import { nodes as initialNodes, edges as initialEdges } from './courses';
 
 const nodeTypes = { course: CourseNode };
 
-//const onInit = (reactFlowInstance) => console.log('flow loaded:', reactFlowInstance);
+const onInit = (reactFlowInstance) => null;//console.log('flow loaded:', reactFlowInstance);
 
 var lefts = [];
 var rights = [];
