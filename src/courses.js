@@ -10,6 +10,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#000',
         background: '#D9B600',
+        done: true,
         label: (
             <>TD I: Introducción a la Programación</>
         ),
@@ -25,6 +26,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#fff',
         background: '#0D037B',
+        done: true,
         label: (
             <>Matemática I</>
         ),
@@ -40,6 +42,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#fff',
         background: '#B64A0D',
+        done: true,
         label: (
             <>Economía I</>
         ),
@@ -55,6 +58,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#fff',
         background: '#232323',
+        done: true,
         label: (
             <>Historia de Occidente a partir de la Modernidad</>
         ),
@@ -70,6 +74,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#000',
         background: '#D9B600',
+        done: true,
         label: (
             <>TD II: Sistemas de Computación</>
         ),
@@ -85,6 +90,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#fff',
         background: '#0D037B',
+        done: true,
         label: (
             <>Matemática II</>
         ),
@@ -100,6 +106,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#fff',
         background: '#0D037B',
+        done: true,
         label: (
             <>Algebra para Computación</>
         ),
@@ -115,6 +122,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#fff',
         background: '#037B1E',
+        done: true,
         label: (
             <>Neurociencias y Psicología Experimental</>
         ),
@@ -130,6 +138,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#fff',
         background: '#232323',
+        done: true,
         label: (
             <>Comprensión de Textos y Escritura</>
         ),
@@ -145,6 +154,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#000',
         background: '#D9B600',
+        done: true,
         label: (
             <>TD III: Algoritmos y Estructuras de Datos</>
         ),
@@ -160,6 +170,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#fff',
         background: '#7B035A',
+        done: true,
         label: (
             <>Introducción al Diseño</>
         ),
@@ -175,6 +186,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#fff',
         background: '#0D037B',
+        done: true,
         label: (
             <>Introducción a la Estadística</>
         ),
@@ -190,6 +202,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#fff',
         background: '#B64A0D',
+        done: false,
         label: (
             <>Microeconomía</>
         ),
@@ -205,6 +218,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#000',
         background: '#D9B600',
+        done: false,
         label: (
             <>TD IV: Redes de Computadoras</>
         ),
@@ -220,6 +234,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#fff',
         background: '#0D037B',
+        done: false,
         label: (
             <>Inferencia Estadística</>
         ),
@@ -235,6 +250,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#fff',
         background: '#037B1E',
+        done: false,
         label: (
             <>Aspectos Éticos y Legales en Tecnología y Sociedad</>
         ),
@@ -250,6 +266,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#fff',
         background: '#B64A0D',
+        done: false,
         label: (
             <>Introducción a la Contabilidad y las Finanzas</>
         ),
@@ -265,6 +282,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#000',
         background: '#D9B600',
+        done: false,
         label: (
             <>TD V: Diseño de Algoritmos</>
         ),
@@ -280,6 +298,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#fff',
         background: '#0D037B',
+        done: false,
         label: (
             <>Métodos Computacionales</>
         ),
@@ -295,6 +314,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#fff',
         background: '#B64A0D',
+        done: false,
         label: (
             <>Gestión de Proyectos Digitales</>
         ),
@@ -310,6 +330,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#fff',
         background: '#7B035A',
+        done: false,
         label: (
             <>Visualización de Datos</>
         ),
@@ -325,6 +346,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#000',
         background: '#D9B600',
+        done: false,
         label: (
             <>TD VI: Inteligencia Artificial</>
         ),
@@ -340,6 +362,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#fff',
         background: '#037B1E',
+        done: false,
         label: (
             <>Teoría de las Decisiones</>
         ),
@@ -355,6 +378,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#fff',
         background: '#B64A0D',
+        done: false,
         label: (
             <>Aplicaciones Computacionales en Negocios</>
         ),
@@ -370,6 +394,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#fff',
         background: '#7B035A',
+        done: false,
         label: (
             <>Diseño Interactivo</>
         ),
@@ -385,6 +410,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#fff',
         background: '#232323',
+        done: false,
         label: (
             <>Expresión Oral y Escrita</>
         ),
@@ -400,6 +426,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#000',
         background: '#D9B600',
+        done: false,
         label: (
             <>TD VII: Ingeniería de Datos</>
         ),
@@ -415,6 +442,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#fff',
         background: '#B64A0D',
+        done: false,
         label: (
             <>Taller de Emprendedorismo</>
         ),
@@ -430,6 +458,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#fff',
         background: '#504F51',
+        done: false,
         label: (
             <>Curso de Campo Menor</>
         ),
@@ -445,6 +474,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#fff',
         background: '#504F51',
+        done: false,
         label: (
             <>Curso de Campo Menor</>
         ),
@@ -460,6 +490,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#000',
         background: '#D9B600',
+        done: false,
         label: (
             <>TD VIII: Proyecto Final</>
         ),
@@ -475,6 +506,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#fff',
         background: '#037B1E',
+        done: false,
         label: (
             <>Inteligencia Artificial y Neurociencias</>
         ),
@@ -490,6 +522,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#fff',
         background: '#504F51',
+        done: false,
         label: (
             <>Curso de Campo Menor</>
         ),
@@ -505,6 +538,7 @@ export const nodes = [{
         hasLeft: false,
         foreground: '#fff',
         background: '#504F51',
+        done: false,
         label: (
             <>Curso de Campo Menor</>
         ),

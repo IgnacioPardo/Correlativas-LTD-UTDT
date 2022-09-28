@@ -23,10 +23,14 @@
 
 a {
   text-decoration: none;
-  color: "#FFDD55";
+  color: "#FFDD55" !important;
 }
 
 a:visited {
   text-decoration: none;
-  color:"#FFDD55";
+  color:"#FFDD55" !important;
+}
+
+.react-flow__attribution{
+  display: none;
 }
