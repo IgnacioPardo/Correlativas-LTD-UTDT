@@ -1,7 +1,7 @@
 # Correlativas Licenciatura en Tecnología Digital
 
 Mapa interactivo de las materias de la carrera Licenciatura en Tecnología Digital de la Universidad Torcuato Di Tella
-Las correlaciones y el plan de estudio esta sacado de la pagina oficiald e la carrera en utdt.edu, podes verlo [aca](https://www.utdt.edu/ver_contenido.php?id_contenido=1314&id_item_menu=2525)
+Las correlaciones y el plan de estudio esta sacado de la pagina oficial de la carrera en utdt.edu, podes verlo [aca](https://www.utdt.edu/ver_contenido.php?id_contenido=1314&id_item_menu=2525)
 
 
 📕 Librerías
