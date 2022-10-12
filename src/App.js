@@ -9,10 +9,11 @@ import ReactFlow, {
   useEdgesState,
 } from 'react-flow-renderer';
 import CourseNode from './CourseNode.js';
-import { nodes as initialNodes, edges as initialEdges } from './courses';
+import YearNode from './YearNode.js';
+import { nodes as initialNodes, edges as initialEdges, year_labels as years } from './courses';
 import { toPng } from 'html-to-image';
 
-const nodeTypes = { course: CourseNode };
+const nodeTypes = { course: CourseNode , year: YearNode};
 
 const onInit = (reactFlowInstance, setReactFlowInstance) => {
   setReactFlowInstance(reactFlowInstance)
@@ -58,6 +59,7 @@ function onlyUnique(value, index, self) {
   return self.indexOf(value) === index;
 }
 
+// Graph nodes after node n
 function forward_path(n, edges) {
   var nodes = [];
   edges.forEach(function (edge) {
@@ -71,6 +73,7 @@ function forward_path(n, edges) {
   return nodes.filter(onlyUnique);
 }
 
+// Graph nodes before node n
 function backward_path(n, edges) {
   var nodes = [];
   edges.forEach(function (edge) {
@@ -84,14 +87,27 @@ function backward_path(n, edges) {
   return nodes.filter(onlyUnique);
 }
 
+// Graph nodes before and after node n
 function path(n) {
   return forward_path(n, full_edges).concat(backward_path(n, full_edges)).concat([n]);
 }
 
-function filterNodes(id) {
+// Filter nodes by ID
+function filterNodesByID(id) {
   var nodes = [];
   initialNodes.forEach(function (node) {
     if (path(id).includes(node.id)) {
+      nodes.push(node);
+    }
+  });
+  return nodes;
+}
+
+// Filter nodes by year
+function filterNodesByYear(year) {
+  var nodes = [];
+  initialNodes.forEach(function (node) {
+    if (node.data.year === year) {
       nodes.push(node);
     }
   });
@@ -118,7 +134,6 @@ function downloadImage(dataUrl) {
 const screenshot = () => {
   toPng(document.querySelector('.react-flow'), {
     filter: (node) => {
-      // we don't want to add the minimap and the controls to the image
       if (
         node?.classList?.contains('react-flow__minimap') ||
         node?.classList?.contains('react-flow__controls')
@@ -131,8 +146,12 @@ const screenshot = () => {
   }).then(downloadImage);
 };
 
+const getNodeYear = (year) => {
+  return years.filter(y => y.id === year)[0];
+}
+
 function App() {
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+  const [nodes, setNodes, onNodesChange] = useNodesState(years.concat(initialNodes));
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
   const onConnect = useCallback((params) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
   const [pathview, setPathview] = useState(true);
@@ -146,12 +165,77 @@ function App() {
   const updateNodes = (id, reducedView) => {
     setPathview(reducedView)
     if (reducedView) {
-      setNodes(filterNodes(id));
+      setNodes(filterNodesByID(id));
+      //setNodes(years.concat(filterNodesByID(id)));
     }
     else {
-      setNodes(initialNodes);
+      setNodes(years.concat(initialNodes));
     }
     setEdges(initialEdges);
+  }
+
+  const nodeClick = (event, element) => {
+    if (element.type === "course") {
+      if (clickedCourse !== element.id) {
+        setClickedCourse(element.id);
+        updateNodes(element.id, true);
+        setClickedCourse(element.id);
+        if (!pathview) {
+          setLabel("Clickea en una materia para ver todas sus correlativas")
+        }
+        else {
+          setLabel("Clickea en cualquier materia para resetear vista")
+        }
+      }
+      else {
+        reset()
+        setClickedCourse(null);
+      }
+    }
+    else if (element.type === "year") {
+      setNodes(filterNodesByYear(element.id).concat(getNodeYear(element.id)));
+      setEdges(initialEdges);
+      setLabel("Clickea en cualquier materia para resetear vista")
+    }
+  }
+
+  const mapClick = (e) => {
+    if (e.target.className === "react-flow__pane react-flow__container") {
+      reset()
+    }
+  }
+
+  const nodeMouseEnter = (event, element) => {
+    setPreLabel(label)
+    if (element.id !== clickedCourse) {
+      if (corrAmm[element.id] > 1) {
+        setLabel("Clickea en " + course_by_id(element.id).data.label.props.children + " para ver sus " + corrAmm[element.id] + " correlativas")
+      }
+      else if (corrAmm[element.id] === 1) {
+        setLabel("Clickea en " + course_by_id(element.id).data.label.props.children + " para ver su correlativa")
+      }
+      else {
+        setLabel(course_by_id(element.id).data.label.props.children + " no tiene correlativas")
+      }
+    }
+    else {
+      if (corrAmm[element.id] > 1) {
+        setLabel(course_by_id(element.id).data.label.props.children + " tiene " + corrAmm[element.id] + " correlativas")
+      }
+      else if (corrAmm[element.id] === 1) {
+        setLabel(course_by_id(element.id).data.label.props.children + " tiene 1 correlativa")
+      }
+      else if (corrAmm[element.id] === 0) {
+        setLabel(course_by_id(element.id).data.label.props.children + " no tiene correlativas")
+      }
+      else {
+        setLabel("Clickea en una materia para ver todas sus correlativas");
+      }
+    }
+  }
+
+  const nodeMouseLeave = (event, element) => {
+    setLabel("Clickea en una materia para ver todas sus correlativas")
   }
 
   const reset = () => {
@@ -165,7 +249,7 @@ function App() {
 
     }
   }, [nodes, reactFlowInstance]);
-
+  
   return (
     <div className="App">
       <div>
@@ -246,59 +330,10 @@ function App() {
         fitView={true}
         attributionPosition="top-right"
         nodeTypes={nodeTypes}
-        onClick={(e) => {
-          if (e.target.className === "react-flow__pane react-flow__container"){
-            reset()
-          }
-        }}
-        onNodeClick={(event, element) => {
-          if (clickedCourse !== element.id){
-            setClickedCourse(element.id);
-            updateNodes(element.id, true);
-            setClickedCourse(element.id);
-            if (!pathview) {
-              setLabel("Clickea en una materia para ver todas sus correlativas")
-            }
-            else {
-              setLabel("Clickea en cualquier materia para resetear vista")
-            }
-          }
-          else{
-            reset()
-          }
-        }}
-        onNodeMouseEnter={(event, element) => {
-          setPreLabel(label)
-          if (element.id !== clickedCourse) {
-            if (corrAmm[element.id] > 1) {
-              setLabel("Clickea en " + course_by_id(element.id).data.label.props.children + " para ver sus " + corrAmm[element.id] + " correlativas")
-            }
-            else if (corrAmm[element.id] === 1) {
-              setLabel("Clickea en " + course_by_id(element.id).data.label.props.children + " para ver su correlativa")
-            }
-            else {
-              setLabel(course_by_id(element.id).data.label.props.children + " no tiene correlativas")
-            }
-          }
-          else {
-            if (corrAmm[element.id] > 1) {
-              setLabel(course_by_id(element.id).data.label.props.children + " tiene " + corrAmm[element.id] + " correlativas")
-            }
-            else if (corrAmm[element.id] === 1) {
-              setLabel(course_by_id(element.id).data.label.props.children + " tiene 1 correlativa")
-            }
-            else if (corrAmm[element.id] === 0) {
-              setLabel(course_by_id(element.id).data.label.props.children + " no tiene correlativas")
-            }
-            else{
-              setLabel("Clickea en una materia para ver todas sus correlativas");
-            }
-          }
-        }}
-        onNodeMouseLeave={(event, element) => {
-          setLabel("Clickea en una materia para ver todas sus correlativas")
-          
-        }}
+        onClick={mapClick}
+        onNodeClick={nodeClick}
+        onNodeMouseEnter={nodeMouseEnter}
+        onNodeMouseLeave={nodeMouseLeave}
       >
         <Controls
           style={{ color: '#4A4A4A', backgroundColor: '#181818', borderRadius: '2px', padding: '5px', zIndex: 100 }}
@@ -306,7 +341,6 @@ function App() {
           showInteractive={false}
         >
           <ControlButton onClick={reset}
-
             onMouseEnter={() => {
               setPreLabel(label);
               setLabel("Resetear vista")
