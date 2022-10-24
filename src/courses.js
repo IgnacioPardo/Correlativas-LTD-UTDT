@@ -626,7 +626,6 @@ export const edges = [
     { id: '1-5', source: '1', target: '5', markerEnd: { type: MarkerType.ArrowClosed, }, animated: true, },
     { id: '1-7', source: '1', target: '7', markerEnd: { type: MarkerType.ArrowClosed, }, animated: true, },
     { id: '2-6', source: '2', target: '6', markerEnd: { type: MarkerType.ArrowClosed, }, },
-    { id: '2-7', source: '2', target: '7', markerEnd: { type: MarkerType.ArrowClosed, }, },
     { id: '1-10', source: '1', target: '10', markerEnd: { type: MarkerType.ArrowClosed, }, },
     { id: '2-10', source: '2', target: '10', markerEnd: { type: MarkerType.ArrowClosed, }, },
     { id: '7-10', source: '7', target: '10', markerEnd: { type: MarkerType.ArrowClosed, }, },
@@ -636,7 +635,6 @@ export const edges = [
     { id: '12-15', source: '12', target: '15', markerEnd: { type: MarkerType.ArrowClosed, }, },
     { id: '1-15', source: '1', target: '15', markerEnd: { type: MarkerType.ArrowClosed, }, animated: true, },
     { id: '10-18', source: '10', target: '18', markerEnd: { type: MarkerType.ArrowClosed, }, },
-    { id: '5-19', source: '5', target: '19', markerEnd: { type: MarkerType.ArrowClosed, }, },
     { id: '6-19', source: '6', target: '19', markerEnd: { type: MarkerType.ArrowClosed, }, },
     { id: '10-19', source: '10', target: '19', markerEnd: { type: MarkerType.ArrowClosed, }, },
     { id: '1-20', source: '1', target: '20', markerEnd: { type: MarkerType.ArrowClosed, }, },
@@ -651,7 +649,6 @@ export const edges = [
     { id: '14-27', source: '14', target: '27', markerEnd: { type: MarkerType.ArrowClosed, }, },
     { id: '8-32', source: '8', target: '32', markerEnd: { type: MarkerType.ArrowClosed, }, },
     { id: '10-32', source: '10', target: '32', markerEnd: { type: MarkerType.ArrowClosed, }, },
-    { id: '14-32', source: '14', target: '32', markerEnd: { type: MarkerType.ArrowClosed, }, },
     { id: '23-32', source: '23', target: '32', markerEnd: { type: MarkerType.ArrowClosed, }, },
     { id: '22-32', source: '22', target: '32', markerEnd: { type: MarkerType.ArrowClosed, }, animated: true, },
 ]
