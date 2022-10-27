@@ -624,7 +624,7 @@ export const nodes = [{
 
 export const edges = [
     { id: '1-5', source: '1', target: '5', markerEnd: { type: MarkerType.ArrowClosed, }, animated: true, },
-    { id: '1-7', source: '1', target: '7', markerEnd: { type: MarkerType.ArrowClosed, }, animated: true, },
+    { id: '1-7', source: '2', target: '7', markerEnd: { type: MarkerType.ArrowClosed, }, animated: true, },
     { id: '2-6', source: '2', target: '6', markerEnd: { type: MarkerType.ArrowClosed, }, },
     { id: '1-10', source: '1', target: '10', markerEnd: { type: MarkerType.ArrowClosed, }, },
     { id: '2-10', source: '2', target: '10', markerEnd: { type: MarkerType.ArrowClosed, }, },
