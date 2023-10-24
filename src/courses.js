@@ -624,8 +624,10 @@ export const nodes = [{
 
 export const edges = [
     { id: '1-5', source: '1', target: '5', markerEnd: { type: MarkerType.ArrowClosed, }, animated: true, },
+    { id: '12-17', source: '12', target: '17', markerEnd: { type: MarkerType.ArrowClosed, }, animated: true, },
     { id: '1-7', source: '2', target: '7', markerEnd: { type: MarkerType.ArrowClosed, }, animated: true, },
     { id: '2-6', source: '2', target: '6', markerEnd: { type: MarkerType.ArrowClosed, }, },
+    { id: '1-21', source: '1', target: '21', markerEnd: { type: MarkerType.ArrowClosed, }, },
     { id: '1-10', source: '1', target: '10', markerEnd: { type: MarkerType.ArrowClosed, }, },
     { id: '2-10', source: '2', target: '10', markerEnd: { type: MarkerType.ArrowClosed, }, },
     { id: '7-10', source: '7', target: '10', markerEnd: { type: MarkerType.ArrowClosed, }, },
@@ -650,5 +652,8 @@ export const edges = [
     { id: '8-32', source: '8', target: '32', markerEnd: { type: MarkerType.ArrowClosed, }, },
     { id: '10-32', source: '10', target: '32', markerEnd: { type: MarkerType.ArrowClosed, }, },
     { id: '23-32', source: '23', target: '32', markerEnd: { type: MarkerType.ArrowClosed, }, },
+    { id: '14-31', source: '14', target: '31', markerEnd: { type: MarkerType.ArrowClosed, }, },
+    { id: '18-31', source: '18', target: '31', markerEnd: { type: MarkerType.ArrowClosed, }, },
+    { id: '20-31', source: '20', target: '31', markerEnd: { type: MarkerType.ArrowClosed, }, animated: true, },
     { id: '22-32', source: '22', target: '32', markerEnd: { type: MarkerType.ArrowClosed, }, animated: true, },
 ]

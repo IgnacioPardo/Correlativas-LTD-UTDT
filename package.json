@@ -15,8 +15,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "GENERATE_SOURCEMAP=false react-scripts start",
-    "build": "react-scripts build && cp -R build/* docs && sed -i -e 's+\"/+\"+g' docs/index.html",
+    "start": "set \"GENERATE_SOURCEMAP=false\" && GENERATE_SOURCEMAP=false react-scripts start",
+    "build": "set \"GENERATE_SOURCEMAP=false\" && GENERATE_SOURCEMAP=false react-scripts build -- --prod && cp -R build/* docs && sed -i -e 's+\"/+\"+g' docs/index.html",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "commit-deploy": "git add docs && git commit -m 'deploy' && git push",
@@ -39,5 +39,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "source-map-loader": "^4.0.1"
   }
 }
